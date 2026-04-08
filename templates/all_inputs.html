@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All HTML Inputs Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(180deg, #f8f9fa 0%, #eef5ff 100%);
+      min-height: 100vh;
+    }
+    .hero {
+      background: linear-gradient(135deg, #212529, #0d6efd);
+      color: white;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.12);
+    }
+    .glass-card {
+      border: 0;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(13,110,253,.08);
+    }
+    .section-title {
+      font-size: 1rem;
+      letter-spacing: .05rem;
+      text-transform: uppercase;
+      color: #0d6efd;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="hero p-4 p-lg-5 mb-4">
+      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-center">
+        <div>
+          <span class="badge text-bg-light mb-2">Selenium Classroom Demo</span>
+          <h1 class="display-6 fw-bold mb-2">All Common HTML Input Types</h1>
+          <p class="mb-0 opacity-75">A single page packed with practical input controls so students can practice selectors, typing, clicking, scrolling, waits, and form submission.</p>
+        </div>
+        <div class="text-lg-end">
+          <a href="/login" class="btn btn-light me-2">Back to Login</a>
+          <a href="/logout" class="btn btn-warning me-2">Logout / Reset Flow</a>
+          <a href="/submissions" class="btn btn-outline-light">Recent Submissions</a>
+        </div>
+      </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="card glass-card">
+      <div class="card-body p-4 p-lg-5">
+        <div class="alert alert-primary border-0 shadow-sm">
+          <strong>Demo flow active:</strong> you reached this page only after a successful login. Re-submitting the same email will not create duplicate data.
+        </div>
+        <form method="post" class="row g-4 needs-validation" novalidate>
+          <input type="hidden" name="hidden_token" value="SELENIUM_DEMO_2026">
+
+          <div class="col-12"><div class="section-title">Identity Inputs</div></div>
+
+          <div class="col-md-6">
+            <label for="full_name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" required placeholder="Rizz" value="{{ logged_in_username }}">
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="name@example.com" value="{{ logged_in_email }}">
+          </div>
+          <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required minlength="6">
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="+92 300 1234567">
+          </div>
+          <div class="col-md-6">
+            <label for="website" class="form-label">Website</label>
+            <input type="url" class="form-control" id="website" name="website" placeholder="https://example.com">
+          </div>
+          <div class="col-md-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" name="age" min="18" max="100" step="1">
+          </div>
+
+          <div class="col-12 pt-2"><div class="section-title">Date & Time Inputs</div></div>
+
+          <div class="col-md-4">
+            <label for="birthdate" class="form-label">Birth Date</label>
+            <input type="date" class="form-control" id="birthdate" name="birthdate">
+          </div>
+          <div class="col-md-4">
+            <label for="appointment" class="form-label">Appointment (datetime-local)</label>
+            <input type="datetime-local" class="form-control" id="appointment" name="appointment">
+          </div>
+          <div class="col-md-4">
+            <label for="alarm_time" class="form-label">Alarm Time</label>
+            <input type="time" class="form-control" id="alarm_time" name="alarm_time">
+          </div>
+
+          <div class="col-12 pt-2"><div class="section-title">Choice Controls</div></div>
+
+          <div class="col-md-4">
+            <label class="form-label d-block">Gender (radio)</label>
+            <div class="form-check"><input class="form-check-input" type="radio" name="gender" id="gender_male" value="Male"><label class="form-check-label" for="gender_male">Male</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="gender" id="gender_female" value="Female"><label class="form-check-label" for="gender_female">Female</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="gender" id="gender_other" value="Other"><label class="form-check-label" for="gender_other">Other</label></div>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label d-block">Hobbies (checkboxes)</label>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="hobbies" id="hobby_reading" value="Reading"><label class="form-check-label" for="hobby_reading">Reading</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="hobbies" id="hobby_coding" value="Coding"><label class="form-check-label" for="hobby_coding">Coding</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" name="hobbies" id="hobby_travel" value="Travel"><label class="form-check-label" for="hobby_travel">Travel</label></div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="education" class="form-label">Education (select)</label>
+            <select class="form-select" id="education" name="education">
+              <option selected disabled value="">Choose...</option>
+              <option>High School</option>
+              <option>Bachelor's</option>
+              <option>Master's</option>
+              <option>PhD</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="country" class="form-label">Country with datalist</label>
+            <input class="form-control" list="countryOptions" id="country" name="country" placeholder="Start typing a country">
+            <datalist id="countryOptions">
+              <option value="Pakistan"></option>
+              <option value="United Arab Emirates"></option>
+              <option value="Saudi Arabia"></option>
+              <option value="Germany"></option>
+              <option value="Canada"></option>
+            </datalist>
+          </div>
+
+          <div class="col-md-6">
+            <label for="skills" class="form-label">Skills (select multiple)</label>
+            <select class="form-select" id="skills" name="skills" multiple size="5">
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Selenium">Selenium</option>
+              <option value="Python">Python</option>
+            </select>
+          </div>
+
+          <div class="col-12 pt-2"><div class="section-title">Specialized Inputs</div></div>
+
+          <div class="col-md-4">
+            <label for="color" class="form-label">Favorite Color</label>
+            <input type="color" class="form-control form-control-color" id="color" name="color" value="#0d6efd">
+          </div>
+          <div class="col-md-4">
+            <label for="satisfaction" class="form-label">Satisfaction (range)</label>
+            <input type="range" class="form-range" id="satisfaction" name="satisfaction" min="0" max="10" step="1" value="6">
+          </div>
+          <div class="col-md-4">
+            <label for="volume" class="form-label">Volume (decimal number)</label>
+            <input type="number" class="form-control" id="volume" name="volume" min="0" max="100" step="0.5" value="25.5">
+          </div>
+
+          <div class="col-md-6">
+            <label for="resume" class="form-label">File Upload</label>
+            <input type="file" class="form-control" id="resume" name="resume">
+            <div class="form-text">File is not stored in this basic demo, but it is included for Selenium interaction practice.</div>
+          </div>
+
+
+          <div class="col-12">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="terms" name="terms" required>
+              <label class="form-check-label" for="terms">I agree to the demo terms</label>
+              <div class="invalid-feedback">You must accept the terms before submitting.</div>
+            </div>
+          </div>
+
+          <div class="col-12 d-flex flex-wrap gap-2 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg">Submit Full Form</button>
+            <button type="reset" class="btn btn-outline-secondary btn-lg">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+
+      // Make the multi-select easier to interact with (click toggles without Ctrl/Cmd)
+      const skillsSelect = document.getElementById('skills');
+      if (skillsSelect) {
+        skillsSelect.addEventListener('mousedown', event => {
+          const option = event.target;
+          if (option && option.tagName === 'OPTION') {
+            event.preventDefault();
+            option.selected = !option.selected;
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

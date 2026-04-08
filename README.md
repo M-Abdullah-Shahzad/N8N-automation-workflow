@@ -35,3 +35,7 @@ Then open:
 ## Added automation asset
 - Added `Task 1 – All Input Form Automation (Complete with CAPTCHA).json` to the repository.
 - This file contains an n8n workflow for solving the login captcha and submitting the all-inputs form.
+
+## Selenium automation
+- Added `selenium_automation/run_automation.py` to automate login, captcha solving, and all-inputs form submission.
+- The script reads `selenium_automation/inputs.csv` and uses Selenium WebDriver to drive the demo Flask app.

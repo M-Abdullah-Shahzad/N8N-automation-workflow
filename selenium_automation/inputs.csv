@@ -1,0 +1,11 @@
+full_name,email,password,phone,website,age,birthdate,appointment,alarm_time,color,satisfaction,volume,country,gender,education,hobbies,skills,terms
+John Doe,john.doe+1@example.com,P@ssw0rd,+1 555 000 0001,https://example.com,25,01/01/1998,03/20/2026 10:30 AM,7:15 am,#0d6efd,7,42.5,Canada,Male,Bachelor's,"Reading,Travel","Python,JavaScript",yes
+Jane Smith,jane.smith+2@example.com,P@ssw0rd,+1 555 000 0002,https://example.org,28,02/02/1995,04/20/2026 11:30 AM,8:15 pm,#ff5733,8,55,USA,Female,Master's,"Cooking,Reading","CSS,HTML",yes
+Alex Taylor,alex.taylor+3@example.com,P@ssw0rd,+1 555 000 0003,https://example.net,32,03/03/1991,05/20/2026 09:45 AM,6:30 am,#28a745,6,33.3,UK,Other,PhD,"Gaming,Music","Selenium,Python",yes
+Sam Rivera,sam.rivera+4@example.com,P@ssw0rd,+1 555 000 0004,https://example.co,40,04/04/1984,06/25/2026 02:00 PM,12:00 pm,#6610f2,5,20.7,Australia,Male,Bachelor's,"Cycling,Reading","JavaScript,HTML",yes
+Taylor Lee,taylor.lee+5@example.com,P@ssw0rd,+1 555 000 0005,https://example.io,35,05/05/1989,07/10/2026 8:00,9:30 am,#fd7e14,9,88.8,Germany,Female,Master's,"Hiking,Travel","Python,Selenium",yes
+Morgan Kim,morgan.kim+6@example.com,P@ssw0rd,+1 555 000 0006,https://example.dev,22,06/06/2002,08/15/2026 03:45 PM,11:00 am,#20c997,4,12.2,India,Other,Bachelor's,"Photography,Music","CSS,JavaScript",yes
+Jordan Park,jordan.park+7@example.com,P@ssw0rd,+1 555 000 0007,https://example.ai,30,07/07/1994,09/05/2026 13:30,10:00 am,#dc3545,2,65,South Africa,Male,Master's,"Reading,Coding","Python,HTML",yes
+Casey Nguyen,casey.nguyen+8@example.com,P@ssw0rd,+1 555 000 0008,https://example.tech,27,08/08/1996,10/20/2026 04:00 PM,2:30 pm,#0d6efd,10,78.4,Japan,Female,Bachelor's,"Painting,Travel","Selenium,JavaScript",yes
+Riley Brooks,riley.brooks+9@example.com,P@ssw0rd,+1 555 000 0009,https://example.shop,33,09/09/1990,11/01/2026 17:15,3:45 pm,#6f42c1,3,50,Brazil,Other,PhD,"Gaming,Hiking","Python,CSS",yes
+Dana Patel,dana.patel+10@example.com,P@ssw0rd,+1 555 000 0010,https://example.tech,26,10/10/1998,12/12/2026 18:00,1:00 pm,#198754,7,21.9,India,Female,Master's,"Cooking,Reading","HTML,Selenium",yes
