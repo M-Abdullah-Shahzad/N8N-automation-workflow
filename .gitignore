@@ -1,7 +1,31 @@
+# Python environments and caches
 .venv/
+venv/
+env/
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
-*.env
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+token.json
+secrets/
+secrets.*
+
+# Local n8n state and runtime output
+.n8n/
+data/
+logs/
+*.log
+
+# OS/editor files
 .DS_Store
+Thumbs.db
